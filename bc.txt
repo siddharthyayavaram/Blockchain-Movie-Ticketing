@@ -1,0 +1,31 @@
+make a user
+user does a transaction
+
+check if transaction is even possible ( no of tickets for that show,balance in the users wallet) - done
+
+then verify transaction using zkp on password of wallet for that user  - done
+
+have the changes apply to their wallet and add the transaction to their list of transactions - done
+
+the method showUser() will just iterate through transaction list and print out all their transactions - done
+
+createBlock() creates the block using the transaction that we have verified - done
+
+then we use mineBlock() to add it to the main blockChain - we need to figure out how to have everyone have a copy of the chain
+
+then it gets added after solving some problem - providing proof of work   -done
+
+we can check both if the block is valid after mining before adding it and  -done
+
+also checking if the chain is valid after adding each block for additional accuracy
+
+make data in block as to string for the show      -done
+
+
+changes____________________________________________
+
+Blockchain class has chain list
+
+main added which will make Blockchain object called blockchain
+
+BlockchainUnitTest is not used
