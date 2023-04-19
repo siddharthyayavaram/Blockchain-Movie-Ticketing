@@ -57,9 +57,11 @@ public class Main {
         user3.showTransactions();
         user4.showTransactions();
 
+        //blockchain.chain.get(blockchain.getsize()-2).setHash("0");
+
 
         boolean isBlockchainValid = blockchain.isBlockchainValid();
-        System.out.println("Is blockchain valid after adding new block? \n" + isBlockchainValid);
+        System.out.println("Is blockchain valid? \n" + isBlockchainValid);
         blockchain.chain.clear();
     }
 }
