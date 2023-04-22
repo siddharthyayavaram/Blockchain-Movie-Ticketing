@@ -4,10 +4,13 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Random;
 
 public class TransactionVerifier {
+
+    static BigInteger[] keys = KeyGenerator.generateKeys();
     
-    // Constants used in the zero knowledge proof
-    private static final BigInteger p = new BigInteger("11"); // large prime
-    private static final BigInteger g = new BigInteger("2"); // generator for p
+    // Primes and generators used in the zero knowledge proof
+    private static final BigInteger p = keys[0]; // large prime
+    private static final BigInteger g = keys[1]; // generator for p
+
     
     /**
      * Verifies a transaction using a zero knowledge proof based on the user's password.
