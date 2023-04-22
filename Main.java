@@ -21,47 +21,62 @@ public class Main {
         if(user1.makeTransaction(show1,2)){
             Block Block1 = new Block("0", new Date().getTime(),user1.getLastTransaction());
             Block1.mineBlock(blockchain.getprefix());
-            blockchain.chain.add(Block1);
+            blockchain.addblock(Block1);
+
+            boolean isBlockchainValid1 = blockchain.isBlockchainValid();
+            System.out.println("Is blockchain valid after adding Block1 ? \n" + isBlockchainValid1 + "\n");
         }
+
 
         // // transaction 2: user2 buys 3 tickets for show3
         if(user2.makeTransaction(show2,3)){
             Block Block2 = new Block(blockchain.chain.get(blockchain.getsize() - 1).getHash(), new Date().getTime(),user2.getLastTransaction());
             Block2.mineBlock(blockchain.getprefix());
-            blockchain.chain.add(Block2);
+            blockchain.addblock(Block2);
+
+            boolean isBlockchainValid2 = blockchain.isBlockchainValid();
+            System.out.println("Is blockchain valid after adding Block2 ? \n" + isBlockchainValid2 + "\n");
         }
+
 
         // // transaction 3: user3 buys 1 ticket for show2
         if(user3.makeTransaction(show3,1)){
             Block Block3 = new Block(blockchain.chain.get(blockchain.getsize() - 1).getHash(), new Date().getTime(),user3.getLastTransaction());
             Block3.mineBlock(blockchain.getprefix());
-            blockchain.chain.add(Block3);
+            blockchain.addblock(Block3);
+
+            boolean isBlockchainValid3 = blockchain.isBlockchainValid();
+            System.out.println("Is blockchain valid after adding Block3 ? \n" + isBlockchainValid3 + "\n");
         }
 
+        // // transaction 4: user4 buys 4 tickets for show4
         if(user4.makeTransaction(show4,4)){
             Block Block4 = new Block(blockchain.chain.get(blockchain.getsize() - 1).getHash(), new Date().getTime(),user4.getLastTransaction());
             Block4.mineBlock(blockchain.getprefix());
 
-            boolean isValid = Block4.getHash().substring(0, blockchain.getprefix()).equals(blockchain.getprefixstring());
+            // boolean isValid = Block4.getHash().substring(0, blockchain.getprefix()).equals(blockchain.getprefixstring());
 
-            System.out.println("Is newBlock valid?\n" + isValid);
-            System.out.println("\n");
+            // System.out.println("Is newBlock valid?\n" + isValid);
+            // System.out.println("\n");
             
-            blockchain.chain.add(Block4);
+            blockchain.addblock(Block4);
+
+            boolean isBlockchainValid4 = blockchain.isBlockchainValid();
+            System.out.println("Is blockchain valid after adding Block4 ? \n" + isBlockchainValid4 + "\n");
         }
 
-
         blockchain.showchain();
-        user1.showTransactions();
+        user1.showTransactions();    // same function as ViewUser() method
         user2.showTransactions();
         user3.showTransactions();
         user4.showTransactions();
 
         //blockchain.chain.get(blockchain.getsize()-2).setHash("0");
+        // this line changes the hash making the chain invalid
 
-
-        boolean isBlockchainValid = blockchain.isBlockchainValid();
-        System.out.println("Is blockchain valid? \n" + isBlockchainValid);
+        boolean isBlockchainValid4 = blockchain.isBlockchainValid();
+        System.out.println("Is blockchain finally valid? \n" + isBlockchainValid4);
         blockchain.chain.clear();
     }
 }
+

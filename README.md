@@ -14,8 +14,8 @@ The following are the classes used in this project:
     - We also give initial balance of the user.
     - Every transaction made is added to the arrayList(blockchain) for the corresponding user.
     - Methods:
-        - makeTransaction()
-        - showTransaction()
+        - makeTransaction() // only completes and adds to the transaction list if transaction is verified
+        - showTransaction() // note showTransaction performs the same task as ViewUser()
         - getLastTransaction()
 ##
 - Wallet: represents a user's digital wallet, which stores their balance and password.
@@ -41,6 +41,7 @@ The following are the classes used in this project:
 - Block: represents a block in the blockchain, containing a list of transactions and a reference to the previous block in the chain.
     - stores hash, previousHash , timeStamp and a transaction object to store the transaction.
     - Methods:
+        - createBlock() // done through Block constructor and added to the chain using addBlock() method of blockchain class
         - mineBlock()
         - calculateBlockHash()
         - all required getters and setters
