@@ -11,7 +11,7 @@ This is a Java-based implementation of a movie ticket booking system using block
 The following are the classes used in this project:
 
 - User: represents a user of the system, who is part of the blockchain, with a username and password for his wallet.
-    - We also give initial balance of the user.
+    - We also input the initial balance of the user.
     - Every transaction made is added to the arrayList(blockchain) for the corresponding user.
     - Methods:
         - makeTransaction() // only completes and adds to the transaction list if transaction is verified
