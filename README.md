@@ -70,9 +70,9 @@ To install and run the movie ticket booking system, follow these steps:
 
 ## Credits
 This project was created by
-1. Aditya Kumar Sharma
-2. Siddharth Yayavaram
-3. Arnav Yayavaram
+1. Siddharth Yayavaram
+2. Arnav Yayavaram
+3. Aditya Kumar Sharma
 4. Nishchay Deep
 5. Rishith Damani
 ### as a part of the course BITS F463: Cryptography.
