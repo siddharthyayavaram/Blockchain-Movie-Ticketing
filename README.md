@@ -1,78 +1,59 @@
-# Movie Ticket Booking System using Blockchain
+# Blockchain Movie Ticketing System
 
-This is a Java-based implementation of a movie ticket booking system using blockchain technology. The system consists of several classes that work together to enable users to book movie tickets securely and transparently.
+This is a Java-based implementation of a decentralized movie ticket booking system using blockchain technology. The system enables users to book movie tickets securely and transparently without the need for a central authority.
 
-## Need for this project
-1. Security: Blockchain provides a high level of security for customers' personal and financial information.
-2. Transparency: Using blockchain could increase transparency in the ticket booking process.
-3. Efficiency: Blockchain can help to streamline transactions, making the ticket booking process faster and more convenient for customers.
+## Features
 
-## Classes
-The following are the classes used in this project:
+*   **Decentralized:** The system uses a peer-to-peer network to store and verify transactions, eliminating the need for a central server.
+*   **Secure:** All transactions are secured using cryptographic hashing and digital signatures, making them tamper-proof.
+*   **Transparent:** All transactions are recorded on a public ledger, making them transparent to all participants in the network.
+*   **Peer-to-Peer:** The system allows users to transact directly with each other without the need for intermediaries.
 
-- User: represents a user of the system, who is part of the blockchain, with a username and password for his wallet.
-    - We also input the initial balance of the user.
-    - Every transaction made is added to the arrayList(blockchain) for the corresponding user.
-    - Methods:
-        - makeTransaction() // only completes and adds to the transaction list if transaction is verified
-        - showTransaction() // note showTransaction performs the same task as ViewUser()
-        - getLastTransaction()
-##
-- Wallet: represents a user's digital wallet, which stores their balance and password.
-    - Updates wallet after every valid transaction.
-    - Methods:
-        - updateBalance()
-        - getBalance()
-##
-- Transaction: represents a transaction of a user, buying ticket for a show.
-    - Methods:
-        - getUserId()
-        - getNumTickets()
-##
-- Shows: represents which shows are available at what time.
-    - also tells about price of movie show and number of seats available.
-    - gives a unique ID to a show.
-    - updates required attributes.
-    - all getters abd setters methods available.
-##
-- TransactionVerifier: represents the class which performs the ZKP to verify transaction.
-    - uses ZKP as specified in the document.
-##
-- Block: represents a block in the blockchain, containing a list of transactions and a reference to the previous block in the chain.
-    - stores hash, previousHash , timeStamp and a transaction object to store the transaction.
-    - Methods:
-        - createBlock() // done through Block constructor and added to the chain using addBlock() method of blockchain class
-        - mineBlock()
-        - calculateBlockHash()
-        - all required getters and setters
-##
-- Blockchain: represents the blockchain itself, maintaining a list of blocks and providing methods for adding new blocks and verifying the integrity of the chain.
-    - also stores difficulty of mining block.
-    - methods:
-        - isBlockchainValid()
-        - addBlock()
-        - showChain()
+## Getting Started
 
-## Usage
-To use the movie ticket booking system, follow these steps:
+### Prerequisites
 
-1. Create a new User object for each user of the system, specifying a username, password and initial balance.
-2. To book a movie ticket, create a new Transaction object of the user's wallet, specifying the number of tickets for a show(amount is automatically checked against the wallet).
-3. Add the Transaction to a new Block object and add the Block to the Blockchain. Although block is only added after the ZKP is verified.
-4. Repeat steps 1-3 for each movie ticket booking.
+*   Java Development Kit (JDK) 8 or higher
+*   Git
 
-## Installation
-To install and run the movie ticket booking system, follow these steps:
+### Installation
 
-1. Clone this repository to your local machine.
-2. Open the project in your preferred Java IDE.
-3. Run the Main class to start the system.
+1.  Clone this repository to your local machine:
 
-## Credits
-This project was created by
-1. Siddharth Yayavaram
-2. Arnav Yayavaram
-3. Aditya Kumar Sharma
-4. Nishchay Deep
-5. Rishith Damani
-### as a part of the course BITS F463: Cryptography.
+    ```bash
+    git clone https://github.com/siddharthyayavaram/Blockchain-Movie-Ticketing.git
+    ```
+
+2.  Navigate to the project directory:
+
+    ```bash
+    cd Blockchain-Movie-Ticketing
+    ```
+
+### Compilation
+
+To compile the Java source files, run the following command from the project root directory:
+
+```bash
+javac -d bin src/*.java
+```
+
+### Usage
+
+To run the application, execute the following command from the project root directory:
+
+```bash
+java -cp bin Main
+```
+
+## How It Works
+
+The system is composed of the following components:
+
+*   **User:** Represents a user of the system, who has a digital wallet to store their balance and make transactions.
+*   **Wallet:** Represents a user's digital wallet, which stores their balance and is used to sign transactions.
+*   **Transaction:** Represents a transaction for booking a movie ticket. Each transaction is digitally signed by the user to ensure its authenticity.
+*   **Shows:** Represents the available movies, showtimes, and ticket prices.
+*   **TransactionVerifier:** Verifies the authenticity of a transaction using Zero-Knowledge Proofs (ZKP).
+*   **Block:** Represents a block in the blockchain, which contains a list of verified transactions.
+*   **Blockchain:** Represents the distributed ledger that stores all the blocks in the chain.
